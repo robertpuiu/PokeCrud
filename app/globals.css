@@ -1,6 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('../ui/shared/colors.css');
+@import url('../ui/shared/reset.css');
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@400;500;600;700&family=Roboto&family=Space+Mono:wght@400;700&display=swap');
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -24,10 +27,62 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+  font-family: Chivo, sans-serif;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+.PokeDex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 1rem 0;
+}
+
+.Home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  gap: 1rem;
+  /* gap: 2rem; */
+  margin: 1rem 0;
+}
+
+.close-icon {
+  border-radius: 25%;
+  width: 1rem;
+  padding: 0.5rem;
+  transition: 200ms all;
+  cursor: pointer;
+}
+
+.Home-type {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+.Pokedex-Logo:hover {
+  /* filter: saturate(200%); */
+  transform: scale(1.01);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 589px) {
+  .Pokedex-Logo {
+    width: 20rem;
   }
 }

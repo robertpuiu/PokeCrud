@@ -1,0 +1,121 @@
+.bug {
+  background: #92bc2c;
+  box-shadow: 0 0 10px #92bc2c;
+}
+
+.dark {
+  background: #595761;
+  box-shadow: 0 0 10px #595761;
+}
+
+.dragon {
+  background: #0c69c8;
+  box-shadow: 0 0 10px #0c69c8;
+}
+
+.electric {
+  background: #f2d94e;
+  box-shadow: 0 0 10px #f2d94e;
+}
+
+.fire {
+  background: #fba54c;
+  box-shadow: 0 0 10px #fba54c;
+}
+
+.fairy {
+  background: #ee90e6;
+  box-shadow: 0 0 10px #ee90e6;
+}
+
+.fighting {
+  background: #d3425f;
+  box-shadow: 0 0 10px #d3425f;
+}
+
+.flying {
+  background: #a1bbec;
+  box-shadow: 0 0 10px #a1bbec;
+}
+
+.ghost {
+  background: #5f6dbc;
+  box-shadow: 0 0 10px #5f6dbc;
+}
+
+.grass {
+  background: #5fbd58;
+  box-shadow: 0 0 10px #5fbd58;
+}
+
+.ground {
+  background: #da7c4d;
+  box-shadow: 0 0 10px #da7c4d;
+}
+
+.ice {
+  background: #75d0c1;
+  box-shadow: 0 0 10px #75d0c1;
+}
+
+.normal {
+  background: #a0a29f;
+  box-shadow: 0 0 10px #a0a29f;
+}
+
+.poison {
+  background: #b763cf;
+  box-shadow: 0 0 10px #b763cf;
+}
+
+.psychic {
+  background: #fa8581;
+  box-shadow: 0 0 10px #fa8581;
+}
+
+.rock {
+  background: #c9bb8a;
+  box-shadow: 0 0 10px #c9bb8a;
+}
+
+.steel {
+  background: #5695a3;
+  box-shadow: 0 0 10px #5695a3;
+}
+
+.water {
+  background: #539ddf;
+  box-shadow: 0 0 10px #539ddf;
+}
+
+.HP {
+  background-color: #df2140;
+}
+
+.ATK {
+  background-color: #ff994f;
+}
+
+.DEF {
+  background-color: #ffdc4e;
+}
+
+.SpA {
+  background-color: #85ddff;
+}
+
+.SpD {
+  background-color: #a8f084;
+}
+
+.SPD {
+  background-color: #f992a4;
+}
+
+.TOT {
+  background-color: #7b97dd;
+}
+
+.TOT-BG {
+  background-color: #92b9ff !important;
+}

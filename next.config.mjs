@@ -1,4 +1,9 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+// next.config.mjs
+const nextConfig = {
+  images: {
+    domains: ['img.pokemondb.net'],
+  },
+};
 
 export default nextConfig;
