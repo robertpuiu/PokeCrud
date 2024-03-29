@@ -32,17 +32,20 @@ export default function PokeDetails() {
       <div className="PokeDetails">
         <Link href="/" style={{ position: 'absolute', top: '0', right: '0' }}>
           <div className="close">
-            <Image src={Close} alt="close" />
+            {Close && <Image src={Close} alt="close" />}
           </div>
         </Link>
         <div className="PokeDetails-header">
-          <Image
-            className="PokeDetails-image"
-            width={200}
-            height={200}
-            src={pokemon.gifURL}
-            alt={pokemon.name}
-          />
+          {pokemon.gifURL && (
+            <Image
+              className="PokeDetails-image"
+              width={200}
+              height={200}
+              src={pokemon.gifURL}
+              alt={pokemon.name}
+            />
+          )}
+
           <p className="PokeDetails-number">
             #{pokemon.index?.toString().padStart(3, '0')}
           </p>
@@ -74,16 +77,15 @@ export default function PokeDetails() {
               </div>
             </div>
           </div>
-          <div
-            className="PokeDetails-section HP rounded-lg p-2 hover:bg-red-500 cursor-pointer"
+          <Link
+            href="/"
+            className="PokeDetails-stat-type HP rounded-lg hover:bg-red-500 cursor-pointer"
             onClick={() => {
               deletePokemon();
             }}
           >
-            <Link href="/" className="PokeDetails-stat-type">
-              Delete
-            </Link>
-          </div>
+            Delete
+          </Link>
         </div>
       </div>
     </div>
