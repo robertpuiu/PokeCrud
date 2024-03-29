@@ -15,7 +15,7 @@ import { set } from 'lodash';
 
 export function CreatePokemonForm({ handleSubmit, formData, setFormData }) {
   const [selectedImage, setSelectedImage] = useState('');
-
+  const [isDisabled, setIsDisabled] = useState(false);
   const handleImageSelect = (imageUrl) => {
     setSelectedImage(imageUrl);
     setFormData({ ...formData, gifURL: imageUrl });
@@ -30,6 +30,13 @@ export function CreatePokemonForm({ handleSubmit, formData, setFormData }) {
       ...formData,
       [name]: numericValue,
     });
+  };
+  const buttonCooldown = () => {
+    setIsDisabled(true); // Disable the button
+    setTimeout(() => {
+      setIsDisabled(false); // Enable the button after 5 seconds
+    }, 5000);
+    // Here you can add your submit logic
   };
   const imageUrls = [
     'https://img.pokemondb.net/sprites/black-white/anim/normal/fearow.gif',
@@ -52,7 +59,13 @@ export function CreatePokemonForm({ handleSubmit, formData, setFormData }) {
   ];
   return (
     <div className="PokeDetailsPage">
-      <form className="space-y-6 w-9/12 text-black" onSubmit={handleSubmit}>
+      <form
+        className="space-y-6 w-9/12 text-black"
+        onSubmit={(e) => {
+          handleSubmit(e);
+          buttonCooldown();
+        }}
+      >
         <h1 className="text-3xl font-bold">Create Pokemon</h1>
         <div className="flex flex-col">
           <label className="mb-2 text-sm font-medium" htmlFor="name">
@@ -225,7 +238,9 @@ export function CreatePokemonForm({ handleSubmit, formData, setFormData }) {
             ))}
           </div>
         </div>
-        <Button type="submit">Submit</Button>
+        <Button type="submit" disabled={isDisabled}>
+          Submit
+        </Button>
       </form>
     </div>
   );

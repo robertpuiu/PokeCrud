@@ -9,14 +9,16 @@ export default function PokeCard(props) {
     // Link to /poke details page
     <Link href={`/pokemon/details/${index}`}>
       <div className="PokeCard">
-        <Image
-          className="PokeCard-image"
-          src={gifURL}
-          alt={name}
-          width={100}
-          height={100}
-          style={{ imageRendering: 'pixelated' }}
-        />
+        {gifURL && (
+          <Image
+            className="PokeCard-image"
+            src={gifURL}
+            alt={name}
+            width={100}
+            height={100}
+            style={{ imageRendering: 'pixelated' }}
+          />
+        )}
 
         <p className="PokeCard-number">N&deg; {index}</p>
         {/* Display the name */}

@@ -21,7 +21,9 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between">
       <div className="Home">
         <Link href="/">
-          <Image src={PokeDex} alt="Pokedex" className="Pokedex-Logo" />
+          {PokeDex && (
+            <Image src={PokeDex} alt="Pokedex" className="Pokedex-Logo" />
+          )}
         </Link>
         <Link
           href="/pokemon/create"
