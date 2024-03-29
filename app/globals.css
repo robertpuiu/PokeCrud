@@ -75,6 +75,9 @@ body {
   padding: 0.5rem;
 }
 
+.Pokedex-Logo {
+  margin-bottom: 3rem;
+}
 .Pokedex-Logo:hover {
   /* filter: saturate(200%); */
   transform: scale(1.01);

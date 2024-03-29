@@ -21,7 +21,12 @@ export default function PokeDetails() {
       setPokemon(data);
     });
   }, []);
-
+  const deletePokemon = async () => {
+    const response = await axios.delete(
+      `http://localhost:3000/api/deletePokemon/${pokemon.id}`
+    );
+    console.log(response);
+  };
   return (
     <div className="PokeDetailsPage">
       <div className="PokeDetails">
@@ -68,6 +73,16 @@ export default function PokeDetails() {
                 <p>{pokemon.exp}</p>
               </div>
             </div>
+          </div>
+          <div
+            className="PokeDetails-section HP rounded-lg p-2 hover:bg-red-500 cursor-pointer"
+            onClick={() => {
+              deletePokemon();
+            }}
+          >
+            <Link href="/" className="PokeDetails-stat-type">
+              Delete
+            </Link>
           </div>
         </div>
       </div>

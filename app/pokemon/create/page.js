@@ -14,7 +14,9 @@ import { useAmp } from 'next/amp';
 import { useState } from 'react';
 import { set } from 'lodash';
 import axios from 'axios';
-
+import Link from 'next/link';
+import Image from 'next/image';
+import PokeDex from '../../../ui/assets/Pokedex.png';
 export default function Component() {
   const [formData, setFormData] = useState({
     gifURL: '',
@@ -44,10 +46,15 @@ export default function Component() {
     console.log('Form Data:', formData);
   };
   return (
-    <CreatePokemonForm
-      formData={formData}
-      setFormData={setFormData}
-      handleSubmit={handleSubmit}
-    />
+    <div className=" flex justify-center items-center flex-col ">
+      <Link href="/">
+        <Image src={PokeDex} alt="Pokedex" className="Pokedex-Logo" />
+      </Link>
+      <CreatePokemonForm
+        formData={formData}
+        setFormData={setFormData}
+        handleSubmit={handleSubmit}
+      />
+    </div>
   );
 }
