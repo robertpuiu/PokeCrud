@@ -9,15 +9,12 @@ import PokeCard from '@/ui/components/PokeCard/PokeCard';
 export default function Home() {
   const [filteredPokedex, setFilteredPokedex] = useState([]);
 
-  const fetchPokemonData = async () => {
-    const promiseArr = [];
-    for (let i = 1; i <= 25; i++) {
-      promiseArr.push(axios.get(`https://pokeapi.co/api/v2/pokemon/${i}`));
-    }
-    const resolvedData = await Promise.all(promiseArr);
-    return resolvedData.map((data) => data.data);
+  const newFetchPokemonData = async () => {
+    const response = await axios.get(
+      'http://localhost:3000/api/getAllPokemons'
+    );
+    return response.data;
   };
-
   const handleSearch = async (searchTerm) => {
     const pokemonData = await fetchPokemonData();
     setFilteredPokedex(
@@ -25,7 +22,7 @@ export default function Home() {
     );
   };
   useEffect(() => {
-    fetchPokemonData().then((data) => setFilteredPokedex(data));
+    newFetchPokemonData().then((data) => setFilteredPokedex(data));
   }, []);
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">

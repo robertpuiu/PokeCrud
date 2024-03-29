@@ -2,40 +2,30 @@
 
 import Image from 'next/image';
 import '../PokeCard/PokeCard.css';
-const pokemonGifUrl = (name, id) => {
-  if (id <= 649) {
-    return `https://img.pokemondb.net/sprites/black-white/anim/normal/${name}.gif`;
-  }
-};
-const pokemonSpriteUrl = (name) =>
-  `https://img.pokemondb.net/sprites/bank/normal/${name}.png`;
-// `https://img.pokemondb.net/sprites/black-white/normal/${name}.png`;
-
+import Link from 'next/link';
 export default function PokeCard(props) {
-  const { name, types, id } = props.pokemon;
+  const { name, type, index, gifURL } = props.pokemon;
   return (
     // Link to /poke details page
-    <div className="PokeCard">
-      <Image
-        className="PokeCard-image"
-        src={pokemonGifUrl(name, id) || pokemonSpriteUrl(name, id)}
-        alt={name}
-        width={100}
-        height={100}
-        style={{ imageRendering: 'pixelated' }}
-      />
+    <Link href={`/pokemon/details/${index}`}>
+      <div className="PokeCard">
+        <Image
+          className="PokeCard-image"
+          src={gifURL}
+          alt={name}
+          width={100}
+          height={100}
+          style={{ imageRendering: 'pixelated' }}
+        />
 
-      <p className="PokeCard-number">N&deg;{id}</p>
-      {/* Display the name */}
-      <p className="PokeCard-name">{name}</p>
-      {/* Display the type */}
-      <div className="PokeCard-types">
-        {types.map((type) => (
-          <p className={`PokeCard-type ${type.type.name}`} key={type.type.name}>
-            {type.type.name}
-          </p>
-        ))}
+        <p className="PokeCard-number">N&deg; {index}</p>
+        {/* Display the name */}
+        <p className="PokeCard-name">{name}</p>
+        {/* Display the type */}
+        <div className="PokeCard-types">
+          <p className={`PokeCard-type ${type}`}>{type}</p>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 }
