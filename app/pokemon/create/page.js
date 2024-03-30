@@ -36,7 +36,7 @@ export default function Component() {
         'http://localhost:3000/api/createPokemon',
         formData
       );
-      if (response.status === 200) {
+      if (response.status === 201) {
         console.log('Pokemon created successfully!');
       } else {
         console.error('Failed to create Pokemon:', response.statusText);
